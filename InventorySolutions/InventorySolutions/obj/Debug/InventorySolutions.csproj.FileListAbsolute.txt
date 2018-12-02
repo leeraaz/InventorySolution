@@ -1,0 +1,28 @@
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\bin\Debug\InventorySolutions.exe.config
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\bin\Debug\InventorySolutions.exe
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\bin\Debug\InventorySolutions.pdb
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.Form1.resources
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.Properties.Resources.resources
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.csproj.GenerateResource.Cache
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.exe
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.pdb
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.csprojResolveAssemblyReference.cache
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.PurchaseBill.resources
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.SalesBill.resources
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.StockManagement.resources
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.LoginPanel.resources
+F:\Softwarica\sem 5\PP\InventorySolutions\InventorySolutions\bin\Debug\MySql.Data.dll
+E:\InventorySolutions\InventorySolutions\bin\Debug\InventorySolutions.exe.config
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.exe
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.pdb
+E:\InventorySolutions\InventorySolutions\bin\Debug\InventorySolutions.exe
+E:\InventorySolutions\InventorySolutions\bin\Debug\InventorySolutions.pdb
+E:\InventorySolutions\InventorySolutions\bin\Debug\MySql.Data.dll
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.csprojResolveAssemblyReference.cache
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.Form1.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.LoginPanel.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.Properties.Resources.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.PurchaseBill.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.SalesBill.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.StockManagement.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.csproj.GenerateResource.Cache
