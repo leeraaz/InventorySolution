@@ -43,14 +43,14 @@
             this.txtProductCode = new System.Windows.Forms.TextBox();
             this.lblSale = new System.Windows.Forms.Label();
             this.lblUnit = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.cmbUnit = new System.Windows.Forms.ComboBox();
             this.lblSize = new System.Windows.Forms.Label();
             this.cmbSize = new System.Windows.Forms.ComboBox();
             this.stockGrid = new System.Windows.Forms.DataGridView();
             this.cmbGroups = new System.Windows.Forms.ComboBox();
-            this.Cancel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnManageCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.stockGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +87,7 @@
             // lblPurchase
             // 
             this.lblPurchase.AutoSize = true;
+            this.lblPurchase.Enabled = false;
             this.lblPurchase.Location = new System.Drawing.Point(7, 160);
             this.lblPurchase.Name = "lblPurchase";
             this.lblPurchase.Size = new System.Drawing.Size(79, 13);
@@ -96,6 +97,7 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
+            this.lblQty.Enabled = false;
             this.lblQty.Location = new System.Drawing.Point(9, 134);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(46, 13);
@@ -105,6 +107,7 @@
             // lblGroup
             // 
             this.lblGroup.AutoSize = true;
+            this.lblGroup.Enabled = false;
             this.lblGroup.Location = new System.Drawing.Point(9, 108);
             this.lblGroup.Name = "lblGroup";
             this.lblGroup.Size = new System.Drawing.Size(36, 13);
@@ -114,6 +117,7 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
+            this.lblProductName.Enabled = false;
             this.lblProductName.Location = new System.Drawing.Point(9, 80);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(75, 13);
@@ -123,15 +127,16 @@
             // lblProductCode
             // 
             this.lblProductCode.AutoSize = true;
+            this.lblProductCode.Enabled = false;
             this.lblProductCode.Location = new System.Drawing.Point(9, 51);
             this.lblProductCode.Name = "lblProductCode";
             this.lblProductCode.Size = new System.Drawing.Size(72, 13);
             this.lblProductCode.TabIndex = 64;
             this.lblProductCode.Text = "Product Code";
-            this.lblProductCode.Visible = false;
             // 
             // txtSalePri
             // 
+            this.txtSalePri.Enabled = false;
             this.txtSalePri.Location = new System.Drawing.Point(407, 154);
             this.txtSalePri.Name = "txtSalePri";
             this.txtSalePri.Size = new System.Drawing.Size(143, 20);
@@ -139,6 +144,7 @@
             // 
             // txtQty
             // 
+            this.txtQty.Enabled = false;
             this.txtQty.Location = new System.Drawing.Point(106, 128);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(163, 20);
@@ -146,6 +152,7 @@
             // 
             // txtPurPri
             // 
+            this.txtPurPri.Enabled = false;
             this.txtPurPri.Location = new System.Drawing.Point(106, 154);
             this.txtPurPri.Name = "txtPurPri";
             this.txtPurPri.Size = new System.Drawing.Size(100, 20);
@@ -153,6 +160,7 @@
             // 
             // txtProductName
             // 
+            this.txtProductName.Enabled = false;
             this.txtProductName.Location = new System.Drawing.Point(106, 74);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(444, 20);
@@ -160,15 +168,16 @@
             // 
             // txtProductCode
             // 
+            this.txtProductCode.Enabled = false;
             this.txtProductCode.Location = new System.Drawing.Point(106, 48);
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(149, 20);
             this.txtProductCode.TabIndex = 56;
-            this.txtProductCode.Visible = false;
             // 
             // lblSale
             // 
             this.lblSale.AutoSize = true;
+            this.lblSale.Enabled = false;
             this.lblSale.Location = new System.Drawing.Point(290, 160);
             this.lblSale.Name = "lblSale";
             this.lblSale.Size = new System.Drawing.Size(60, 13);
@@ -178,25 +187,27 @@
             // lblUnit
             // 
             this.lblUnit.AutoSize = true;
+            this.lblUnit.Enabled = false;
             this.lblUnit.Location = new System.Drawing.Point(290, 131);
             this.lblUnit.Name = "lblUnit";
             this.lblUnit.Size = new System.Drawing.Size(26, 13);
             this.lblUnit.TabIndex = 54;
             this.lblUnit.Text = "Unit";
             // 
-            // btnCancel
+            // btnClose
             // 
-            this.btnCancel.Location = new System.Drawing.Point(475, 12);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 72;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnClose.Location = new System.Drawing.Point(475, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 72;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cmbUnit
             // 
             this.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUnit.Enabled = false;
             this.cmbUnit.FormattingEnabled = true;
             this.cmbUnit.Items.AddRange(new object[] {
             "Pcs",
@@ -212,6 +223,7 @@
             // lblSize
             // 
             this.lblSize.AutoSize = true;
+            this.lblSize.Enabled = false;
             this.lblSize.Location = new System.Drawing.Point(333, 105);
             this.lblSize.Name = "lblSize";
             this.lblSize.Size = new System.Drawing.Size(27, 13);
@@ -221,6 +233,7 @@
             // cmbSize
             // 
             this.cmbSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSize.Enabled = false;
             this.cmbSize.FormattingEnabled = true;
             this.cmbSize.Items.AddRange(new object[] {
             "1/2\"",
@@ -246,6 +259,7 @@
             // cmbGroups
             // 
             this.cmbGroups.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGroups.Enabled = false;
             this.cmbGroups.FormattingEnabled = true;
             this.cmbGroups.Items.AddRange(new object[] {
             "PPR PIPES",
@@ -257,37 +271,41 @@
             this.cmbGroups.Size = new System.Drawing.Size(221, 21);
             this.cmbGroups.TabIndex = 77;
             // 
-            // Cancel
+            // btnOk
             // 
-            this.Cancel.Location = new System.Drawing.Point(146, 183);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(75, 23);
-            this.Cancel.TabIndex = 78;
-            this.Cancel.Text = "OK";
-            this.Cancel.UseVisualStyleBackColor = true;
+            this.btnOk.Enabled = false;
+            this.btnOk.Location = new System.Drawing.Point(160, 183);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 78;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // button2
+            // btnManageCancel
             // 
-            this.button2.Location = new System.Drawing.Point(241, 183);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 79;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnManageCancel.Enabled = false;
+            this.btnManageCancel.Location = new System.Drawing.Point(241, 183);
+            this.btnManageCancel.Name = "btnManageCancel";
+            this.btnManageCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnManageCancel.TabIndex = 79;
+            this.btnManageCancel.Text = "Cancel";
+            this.btnManageCancel.UseVisualStyleBackColor = true;
+            this.btnManageCancel.Click += new System.EventHandler(this.btnManageCancel_Click);
             // 
             // StockManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 472);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.btnManageCancel);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.cmbGroups);
             this.Controls.Add(this.stockGrid);
             this.Controls.Add(this.cmbSize);
             this.Controls.Add(this.lblSize);
             this.Controls.Add(this.cmbUnit);
-            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDele);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -305,6 +323,7 @@
             this.Controls.Add(this.lblUnit);
             this.Name = "StockManagement";
             this.Text = "StockManagement";
+            this.Load += new System.EventHandler(this.StockManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stockGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -328,13 +347,13 @@
         private System.Windows.Forms.TextBox txtProductCode;
         private System.Windows.Forms.Label lblSale;
         private System.Windows.Forms.Label lblUnit;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ComboBox cmbUnit;
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.ComboBox cmbSize;
         private System.Windows.Forms.DataGridView stockGrid;
         private System.Windows.Forms.ComboBox cmbGroups;
-        private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnManageCancel;
     }
 }

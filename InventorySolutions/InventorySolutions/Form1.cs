@@ -19,13 +19,13 @@ namespace InventorySolutions
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            SalesBill sb = new SalesBill();
+            ProductSale sb = new ProductSale();
             sb.Show();
         }
 
         private void btnPurchase_Click(object sender, EventArgs e)
         {
-            PurchaseBill pb = new PurchaseBill();
+            ProductPurchase pb = new ProductPurchase();
             pb.Show();
         }
 
@@ -55,6 +55,12 @@ namespace InventorySolutions
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            Supplier sup = new Supplier();
+            sup.Show();
         }
     }
 }

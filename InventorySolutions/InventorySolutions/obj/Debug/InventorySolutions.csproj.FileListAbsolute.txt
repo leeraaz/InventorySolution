@@ -26,3 +26,7 @@ E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.PurchaseBi
 E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.SalesBill.resources
 E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.StockManagement.resources
 E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.csproj.GenerateResource.Cache
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.ProductSale.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.Supplier.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.ProductPurchase.resources
+E:\InventorySolutions\InventorySolutions\obj\Debug\InventorySolutions.InventoryReview.resources

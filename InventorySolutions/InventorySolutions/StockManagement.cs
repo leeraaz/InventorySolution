@@ -15,10 +15,12 @@ namespace InventorySolutions
     public partial class StockManagement : Form
     {
         DatabaseConnection db = new DatabaseConnection();
+        public bool Enabled { get; set; }
         public StockManagement()
         {
             InitializeComponent();
             productView();
+            getProductID();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -26,12 +28,61 @@ namespace InventorySolutions
             this.Close();
         }
 
+        public void getProductID()
+        {
+            int a;
+            db.DBConnect = db.DBConnection();
+            string getID = "Select max(Product_Code) from products";
+            MySqlCommand cmd = new MySqlCommand(getID, db.DBConnect);
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                string val = dr[0].ToString();
+                if (val == "")
+                {
+                    txtProductCode.Text = "1";
+                }
+                else
+                {
+                    a = Convert.ToInt32(dr[0].ToString());
+                    a = a + 1;
+                    txtProductCode.Text = a.ToString();
+                    txtProductCode.ReadOnly = true;
+                }
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtProductCode.Enabled = true;
+            txtProductName.Enabled = true;
+            cmbGroups.Enabled = true;
+            cmbSize.Enabled = true;
+            txtQty.Enabled = true;
+            cmbUnit.Enabled = true;
+            txtPurPri.Enabled = true;
+            txtSalePri.Enabled = true;
+
+            lblProductCode.Enabled = true;
+            lblProductName.Enabled = true;
+            lblGroup.Enabled = true;
+            lblSize.Enabled = true;
+            lblQty.Enabled = true;
+            lblUnit.Enabled = true;
+            lblPurchase.Enabled = true;
+            lblSale.Enabled = true;
+            btnOk.Enabled = true;
+            btnManageCancel.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDele.Enabled = false;
+        }
+
+        private void addItem()
         {
             String prdCode = txtProductCode.Text;
             String prdName = txtProductName.Text;
             String prdGrp = cmbGroups.Text;
-            String prdSize = cmbSize.Text;
             String qty = txtQty.Text;
             String unit = cmbUnit.Text; ;
             String purPrice = txtPurPri.Text;
@@ -44,8 +95,8 @@ namespace InventorySolutions
             }
             else
             {
-                string prdInsert = "insert into Products(Product_Code,Product_Name,Product_Group,Size,Quantity,Unit,Purchase_Price,Sales_Price)" +
-                                    "values('" + prdCode + "','" + prdName + "','" + prdGrp + "','" + prdSize + "','" + qty + "','" + unit + "','" + purPrice + "','" + salePrice + "');";
+                string prdInsert = "insert into Products(Product_Code,Product_Name,Product_Group,Quantity,Unit,Purchase_Price,Sales_Price)" +
+                                    "values('" + prdCode + "','" + prdName + "','" + prdGrp + "','" + qty + "','" + unit + "','" + purPrice + "','" + salePrice + "');";
 
                 db.DBConnect = db.DBConnection();
                 MySqlCommand myProduct = new MySqlCommand(prdInsert, db.DBConnect);
@@ -56,7 +107,6 @@ namespace InventorySolutions
                     if (num > 0)
                     {
                         MessageBox.Show("Product has been inserted.");
-                        this.Refresh();
                     }
                     else
                     {
@@ -65,19 +115,42 @@ namespace InventorySolutions
                 }
                 catch (MySqlException er)
                 {
-                    MessageBox.Show("An error has occured: ", er.Message); 
+                    MessageBox.Show(er.Message, "An error has occured: ");
                 }
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            db.DBConnect = db.DBConnection();
-            
+            txtProductCode.Enabled = true;
+            txtProductName.Enabled = true;
+            cmbGroups.Enabled = true;
+            cmbSize.Enabled = true;
+            txtQty.Enabled = true;
+            cmbUnit.Enabled = true;
+            txtPurPri.Enabled = true;
+            txtSalePri.Enabled = true;
+
+            lblProductCode.Enabled = true;
+            lblProductName.Enabled = true;
+            lblGroup.Enabled = true;
+            lblSize.Enabled = true;
+            lblQty.Enabled = true;
+            lblUnit.Enabled = true;
+            lblPurchase.Enabled = true;
+            lblSale.Enabled = true;
+            btnOk.Enabled = true;
+            btnManageCancel.Enabled = true;
+            btnAdd.Enabled = false;
+            btnDele.Enabled = false;
+        }
+
+        public void editItem()
+        {
             String prdCode = txtProductCode.Text;
+            txtProductCode.ReadOnly = true;
             String prdName = txtProductName.Text;
             String prdGrp = cmbGroups.Text;
-            String prdSize = cmbSize.Text;
             String qty = txtQty.Text;
             String unit = cmbUnit.Text; ;
             String purPrice = txtPurPri.Text;
@@ -90,15 +163,14 @@ namespace InventorySolutions
             }
             else
             {
-                string prdupdate = "update Products set  Product_Name = '" + prdName +
+                string prdupdate = "update Products set Product_Name = '" + prdName +
                                                     "',Product_Group = '" + prdGrp +
-                                                    "',Size = '" + prdSize +
                                                     "',Quantity = '" + qty +
                                                     "',Unit = '" + unit +
                                                     "',Purchase_Price = '" + purPrice +
                                                     "',Sales_Price = '" + salePrice +
-                                                    "where Product_Code = '" + prdCode + ";";
-                
+                                                    "' where Product_Code = " + prdCode + ";";
+                db.DBConnect = db.DBConnection();
                 MySqlCommand prdUpdate = new MySqlCommand(prdupdate, db.DBConnect);
                 try
                 {
@@ -110,7 +182,7 @@ namespace InventorySolutions
                     }
                     else
                     {
-                        MessageBox.Show("Data not inserted.");
+                        MessageBox.Show("Product details cannot be updated.");
                     }
                 }
                 catch (MySqlException er)
@@ -119,10 +191,35 @@ namespace InventorySolutions
                 }
             }
         }
-
         private void btnDele_Click(object sender, EventArgs e)
         {
+            txtProductCode.Enabled = true;
+            txtProductName.Enabled = true;
+            cmbGroups.Enabled = true;
+            cmbSize.Enabled = true;
+            txtQty.Enabled = true;
+            cmbUnit.Enabled = true;
+            txtPurPri.Enabled = true;
+            txtSalePri.Enabled = true;
+
+            lblProductCode.Enabled = true;
+            lblProductName.Enabled = true;
+            lblGroup.Enabled = true;
+            lblSize.Enabled = true;
+            lblQty.Enabled = true;
+            lblUnit.Enabled = true;
+            lblPurchase.Enabled = true;
+            lblSale.Enabled = true;
+            btnOk.Enabled = true;
+            btnManageCancel.Enabled = true;
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+        }
+
+        private void deleteItem()
+        {
             String prdCode = txtProductCode.Text;
+            txtProductCode.ReadOnly = true;
             String prdName = txtProductName.Text;
             String prdGrp = cmbGroups.Text;
             String prdSize = cmbSize.Text;
@@ -187,6 +284,34 @@ namespace InventorySolutions
                 txtPurPri.Text = stockGrid.SelectedRows[0].Cells[6].Value + string.Empty;
                 txtSalePri.Text = stockGrid.SelectedRows[0].Cells[7].Value + string.Empty;
             }
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (btnAdd.Enabled == true && btnDele.Enabled == false && btnEdit.Enabled == false)
+            {
+                addItem();
+            }
+            else if (btnAdd.Enabled == false && btnDele.Enabled == true && btnEdit.Enabled == false)
+            {
+                deleteItem();
+            }
+            else if (btnAdd.Enabled == false && btnDele.Enabled == false && btnEdit.Enabled == true)
+            {
+                editItem();
+            }
+        }
+
+        private void btnManageCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            StockManagement sm = new StockManagement();
+            sm.Show();
+        }
+
+        private void StockManagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
