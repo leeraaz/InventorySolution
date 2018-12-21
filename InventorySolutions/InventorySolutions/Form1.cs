@@ -62,5 +62,35 @@ namespace InventorySolutions
             Supplier sup = new Supplier();
             sup.Show();
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            CustomerOrders cud = new CustomerOrders();
+            cud.Show();
+        }
+
+        private void btnViewPurchase_Click(object sender, EventArgs e)
+        {
+            AllPurchaseDetails allpurchase = new AllPurchaseDetails();
+            allpurchase.Show();
+        }
+
+        private void btnSalesView_Click(object sender, EventArgs e)
+        {
+            AllSalesBills allsale = new AllSalesBills();
+            allsale.Show();
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            Customer_List cl = new Customer_List();
+            cl.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            InventoryReview ire = new InventoryReview();
+            ire.Show();
+        }
     }
 }

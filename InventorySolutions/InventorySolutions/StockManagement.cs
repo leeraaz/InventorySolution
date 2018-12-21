@@ -58,7 +58,6 @@ namespace InventorySolutions
             txtProductCode.Enabled = true;
             txtProductName.Enabled = true;
             cmbGroups.Enabled = true;
-            cmbSize.Enabled = true;
             txtQty.Enabled = true;
             cmbUnit.Enabled = true;
             txtPurPri.Enabled = true;
@@ -67,7 +66,6 @@ namespace InventorySolutions
             lblProductCode.Enabled = true;
             lblProductName.Enabled = true;
             lblGroup.Enabled = true;
-            lblSize.Enabled = true;
             lblQty.Enabled = true;
             lblUnit.Enabled = true;
             lblPurchase.Enabled = true;
@@ -125,7 +123,6 @@ namespace InventorySolutions
             txtProductCode.Enabled = true;
             txtProductName.Enabled = true;
             cmbGroups.Enabled = true;
-            cmbSize.Enabled = true;
             txtQty.Enabled = true;
             cmbUnit.Enabled = true;
             txtPurPri.Enabled = true;
@@ -134,7 +131,6 @@ namespace InventorySolutions
             lblProductCode.Enabled = true;
             lblProductName.Enabled = true;
             lblGroup.Enabled = true;
-            lblSize.Enabled = true;
             lblQty.Enabled = true;
             lblUnit.Enabled = true;
             lblPurchase.Enabled = true;
@@ -196,7 +192,6 @@ namespace InventorySolutions
             txtProductCode.Enabled = true;
             txtProductName.Enabled = true;
             cmbGroups.Enabled = true;
-            cmbSize.Enabled = true;
             txtQty.Enabled = true;
             cmbUnit.Enabled = true;
             txtPurPri.Enabled = true;
@@ -205,7 +200,6 @@ namespace InventorySolutions
             lblProductCode.Enabled = true;
             lblProductName.Enabled = true;
             lblGroup.Enabled = true;
-            lblSize.Enabled = true;
             lblQty.Enabled = true;
             lblUnit.Enabled = true;
             lblPurchase.Enabled = true;
@@ -222,7 +216,6 @@ namespace InventorySolutions
             txtProductCode.ReadOnly = true;
             String prdName = txtProductName.Text;
             String prdGrp = cmbGroups.Text;
-            String prdSize = cmbSize.Text;
             String qty = txtQty.Text;
             String unit = cmbUnit.Text; ;
             String purPrice = txtPurPri.Text;
@@ -278,7 +271,6 @@ namespace InventorySolutions
                 txtProductCode.Text = stockGrid.SelectedRows[0].Cells[0].Value + string.Empty;
                 txtProductName.Text = stockGrid.SelectedRows[0].Cells[1].Value + string.Empty;
                 cmbGroups.Text = stockGrid.SelectedRows[0].Cells[2].Value + string.Empty;
-                cmbSize.Text = stockGrid.SelectedRows[0].Cells[3].Value + string.Empty;
                 txtQty.Text = stockGrid.SelectedRows[0].Cells[4].Value + string.Empty;
                 cmbUnit.Text = stockGrid.SelectedRows[0].Cells[5].Value + string.Empty;
                 txtPurPri.Text = stockGrid.SelectedRows[0].Cells[6].Value + string.Empty;

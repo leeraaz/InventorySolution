@@ -48,12 +48,12 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnSalesOk = new System.Windows.Forms.Button();
             this.GridPurchase = new System.Windows.Forms.DataGridView();
-            this.lblBillNo = new System.Windows.Forms.Label();
             this.Particulars = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblBillNo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridPurchase)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,7 @@
             // 
             // purDate
             // 
+            this.purDate.CustomFormat = "yyyy-MM-dd";
             this.purDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.purDate.Location = new System.Drawing.Point(619, 6);
             this.purDate.Name = "purDate";
@@ -79,6 +80,7 @@
             // 
             this.txtSuppName.Location = new System.Drawing.Point(92, 42);
             this.txtSuppName.Name = "txtSuppName";
+            this.txtSuppName.ReadOnly = true;
             this.txtSuppName.Size = new System.Drawing.Size(611, 20);
             this.txtSuppName.TabIndex = 2;
             // 
@@ -86,6 +88,7 @@
             // 
             this.txtSupplierAdd.Location = new System.Drawing.Point(92, 69);
             this.txtSupplierAdd.Name = "txtSupplierAdd";
+            this.txtSupplierAdd.ReadOnly = true;
             this.txtSupplierAdd.Size = new System.Drawing.Size(348, 20);
             this.txtSupplierAdd.TabIndex = 3;
             // 
@@ -93,6 +96,7 @@
             // 
             this.txtPurBillno.Location = new System.Drawing.Point(92, 6);
             this.txtPurBillno.Name = "txtPurBillno";
+            this.txtPurBillno.ReadOnly = true;
             this.txtPurBillno.Size = new System.Drawing.Size(134, 20);
             this.txtPurBillno.TabIndex = 0;
             // 
@@ -129,6 +133,7 @@
             this.txtTax.Name = "txtTax";
             this.txtTax.Size = new System.Drawing.Size(161, 20);
             this.txtTax.TabIndex = 7;
+            this.txtTax.Text = "0";
             // 
             // txtTaxable
             // 
@@ -152,6 +157,7 @@
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(84, 20);
             this.txtDiscount.TabIndex = 5;
+            this.txtDiscount.Text = "0";
             // 
             // txtAmount
             // 
@@ -230,15 +236,6 @@
             this.GridPurchase.Size = new System.Drawing.Size(694, 220);
             this.GridPurchase.TabIndex = 60;
             // 
-            // lblBillNo
-            // 
-            this.lblBillNo.AutoSize = true;
-            this.lblBillNo.Location = new System.Drawing.Point(9, 9);
-            this.lblBillNo.Name = "lblBillNo";
-            this.lblBillNo.Size = new System.Drawing.Size(40, 13);
-            this.lblBillNo.TabIndex = 52;
-            this.lblBillNo.Text = "Bill No.";
-            // 
             // Particulars
             // 
             this.Particulars.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -268,6 +265,15 @@
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
+            // 
+            // lblBillNo
+            // 
+            this.lblBillNo.AutoSize = true;
+            this.lblBillNo.Location = new System.Drawing.Point(9, 9);
+            this.lblBillNo.Name = "lblBillNo";
+            this.lblBillNo.Size = new System.Drawing.Size(40, 13);
+            this.lblBillNo.TabIndex = 52;
+            this.lblBillNo.Text = "Bill No.";
             // 
             // PurchaseBill
             // 

@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.btnViewPurchase = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
@@ -65,6 +67,7 @@
             this.updateCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSalesView = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,6 +77,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel3.Controls.Add(this.btnSalesView);
+            this.panel3.Controls.Add(this.btnOrder);
+            this.panel3.Controls.Add(this.btnViewPurchase);
             this.panel3.Controls.Add(this.btnPurchase);
             this.panel3.Controls.Add(this.btnSales);
             this.panel3.Controls.Add(this.btnStock);
@@ -82,6 +88,26 @@
             this.panel3.Size = new System.Drawing.Size(633, 502);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Location = new System.Drawing.Point(189, 218);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(87, 47);
+            this.btnOrder.TabIndex = 4;
+            this.btnOrder.Text = "View Order";
+            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
+            // btnViewPurchase
+            // 
+            this.btnViewPurchase.Location = new System.Drawing.Point(3, 218);
+            this.btnViewPurchase.Name = "btnViewPurchase";
+            this.btnViewPurchase.Size = new System.Drawing.Size(87, 47);
+            this.btnViewPurchase.TabIndex = 3;
+            this.btnViewPurchase.Text = "View Purchase Bill";
+            this.btnViewPurchase.UseVisualStyleBackColor = true;
+            this.btnViewPurchase.Click += new System.EventHandler(this.btnViewPurchase_Click);
             // 
             // btnPurchase
             // 
@@ -184,8 +210,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(235, 57);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Inventory";
+            this.button4.Text = "Inventory Review";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnClose
             // 
@@ -205,6 +232,7 @@
             this.btnCustomer.TabIndex = 2;
             this.btnCustomer.Text = "Customers";
             this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnSupplier
             // 
@@ -379,6 +407,16 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             // 
+            // btnSalesView
+            // 
+            this.btnSalesView.Location = new System.Drawing.Point(96, 218);
+            this.btnSalesView.Name = "btnSalesView";
+            this.btnSalesView.Size = new System.Drawing.Size(87, 47);
+            this.btnSalesView.TabIndex = 5;
+            this.btnSalesView.Text = "View Sales Bill";
+            this.btnSalesView.UseVisualStyleBackColor = true;
+            this.btnSalesView.Click += new System.EventHandler(this.btnSalesView_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,6 +480,9 @@
         private System.Windows.Forms.ToolStripMenuItem addCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateCustomerToolStripMenuItem;
+        private System.Windows.Forms.Button btnViewPurchase;
+        private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.Button btnSalesView;
     }
 }
 

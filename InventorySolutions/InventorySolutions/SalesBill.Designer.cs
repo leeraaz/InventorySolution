@@ -59,28 +59,29 @@
             // 
             // saleDate
             // 
+            this.saleDate.CustomFormat = "yyyy-MM-dd";
             this.saleDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.saleDate.Location = new System.Drawing.Point(359, 9);
+            this.saleDate.Location = new System.Drawing.Point(520, 12);
             this.saleDate.Name = "saleDate";
             this.saleDate.Size = new System.Drawing.Size(84, 20);
-            this.saleDate.TabIndex = 68;
+            this.saleDate.TabIndex = 1;
             // 
             // txtSaleName
             // 
-            this.txtSaleName.Location = new System.Drawing.Point(95, 42);
+            this.txtSaleName.Location = new System.Drawing.Point(110, 43);
             this.txtSaleName.Name = "txtSaleName";
             this.txtSaleName.ReadOnly = true;
-            this.txtSaleName.Size = new System.Drawing.Size(207, 20);
-            this.txtSaleName.TabIndex = 67;
+            this.txtSaleName.Size = new System.Drawing.Size(516, 20);
+            this.txtSaleName.TabIndex = 2;
             this.txtSaleName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtSaleAdd
             // 
-            this.txtSaleAdd.Location = new System.Drawing.Point(359, 42);
+            this.txtSaleAdd.Location = new System.Drawing.Point(110, 71);
             this.txtSaleAdd.Name = "txtSaleAdd";
             this.txtSaleAdd.ReadOnly = true;
-            this.txtSaleAdd.Size = new System.Drawing.Size(164, 20);
-            this.txtSaleAdd.TabIndex = 66;
+            this.txtSaleAdd.Size = new System.Drawing.Size(434, 20);
+            this.txtSaleAdd.TabIndex = 3;
             // 
             // txtSaleBillno
             // 
@@ -88,12 +89,12 @@
             this.txtSaleBillno.Name = "txtSaleBillno";
             this.txtSaleBillno.ReadOnly = true;
             this.txtSaleBillno.Size = new System.Drawing.Size(134, 20);
-            this.txtSaleBillno.TabIndex = 65;
+            this.txtSaleBillno.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 45);
+            this.label3.Location = new System.Drawing.Point(13, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 64;
@@ -102,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(308, 45);
+            this.label2.Location = new System.Drawing.Point(12, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 63;
@@ -120,7 +121,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(308, 9);
+            this.lblDate.Location = new System.Drawing.Point(469, 12);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(30, 13);
             this.lblDate.TabIndex = 62;
@@ -130,44 +131,46 @@
             // 
             this.txtTax.Location = new System.Drawing.Point(90, 371);
             this.txtTax.Name = "txtTax";
-            this.txtTax.Size = new System.Drawing.Size(91, 20);
-            this.txtTax.TabIndex = 80;
+            this.txtTax.Size = new System.Drawing.Size(142, 20);
+            this.txtTax.TabIndex = 7;
+            this.txtTax.Text = "0";
             // 
             // txtTaxable
             // 
-            this.txtTaxable.Location = new System.Drawing.Point(416, 333);
+            this.txtTaxable.Location = new System.Drawing.Point(499, 333);
             this.txtTaxable.Name = "txtTaxable";
-            this.txtTaxable.Size = new System.Drawing.Size(95, 20);
-            this.txtTaxable.TabIndex = 79;
+            this.txtTaxable.Size = new System.Drawing.Size(127, 20);
+            this.txtTaxable.TabIndex = 6;
             this.txtTaxable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtTaxable_MouseClick);
             // 
             // txtGrand
             // 
-            this.txtGrand.Location = new System.Drawing.Point(257, 371);
+            this.txtGrand.Location = new System.Drawing.Point(309, 371);
             this.txtGrand.Name = "txtGrand";
-            this.txtGrand.Size = new System.Drawing.Size(106, 20);
-            this.txtGrand.TabIndex = 78;
+            this.txtGrand.Size = new System.Drawing.Size(134, 20);
+            this.txtGrand.TabIndex = 8;
             this.txtGrand.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtGrand_MouseClick);
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(243, 333);
+            this.txtDiscount.Location = new System.Drawing.Point(295, 333);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(83, 20);
-            this.txtDiscount.TabIndex = 77;
+            this.txtDiscount.Size = new System.Drawing.Size(114, 20);
+            this.txtDiscount.TabIndex = 5;
+            this.txtDiscount.Text = "0";
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(90, 336);
+            this.txtAmount.Location = new System.Drawing.Point(88, 333);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(91, 20);
-            this.txtAmount.TabIndex = 76;
+            this.txtAmount.Size = new System.Drawing.Size(144, 20);
+            this.txtAmount.TabIndex = 4;
             this.txtAmount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtAmount_MouseClick);
             // 
             // lblGrand
             // 
             this.lblGrand.AutoSize = true;
-            this.lblGrand.Location = new System.Drawing.Point(188, 374);
+            this.lblGrand.Location = new System.Drawing.Point(240, 374);
             this.lblGrand.Name = "lblGrand";
             this.lblGrand.Size = new System.Drawing.Size(63, 13);
             this.lblGrand.TabIndex = 75;
@@ -185,7 +188,7 @@
             // lblTaxable
             // 
             this.lblTaxable.AutoSize = true;
-            this.lblTaxable.Location = new System.Drawing.Point(326, 336);
+            this.lblTaxable.Location = new System.Drawing.Point(415, 336);
             this.lblTaxable.Name = "lblTaxable";
             this.lblTaxable.Size = new System.Drawing.Size(84, 13);
             this.lblTaxable.TabIndex = 73;
@@ -194,7 +197,7 @@
             // lblDiscount
             // 
             this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Location = new System.Drawing.Point(188, 336);
+            this.lblDiscount.Location = new System.Drawing.Point(240, 336);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(49, 13);
             this.lblDiscount.TabIndex = 72;
@@ -211,19 +214,20 @@
             // 
             // btnSalesOk
             // 
-            this.btnSalesOk.Location = new System.Drawing.Point(162, 407);
+            this.btnSalesOk.Location = new System.Drawing.Point(124, 407);
             this.btnSalesOk.Name = "btnSalesOk";
-            this.btnSalesOk.Size = new System.Drawing.Size(75, 23);
-            this.btnSalesOk.TabIndex = 70;
+            this.btnSalesOk.Size = new System.Drawing.Size(193, 23);
+            this.btnSalesOk.TabIndex = 9;
             this.btnSalesOk.Text = "OK";
             this.btnSalesOk.UseVisualStyleBackColor = true;
+            this.btnSalesOk.Click += new System.EventHandler(this.btnSalesOk_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(243, 407);
+            this.btnCancel.Location = new System.Drawing.Point(323, 407);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 81;
+            this.btnCancel.Size = new System.Drawing.Size(193, 23);
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

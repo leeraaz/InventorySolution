@@ -41,7 +41,7 @@ namespace InventorySolutions
                                                   " "+ GridPurchase.Rows[i].Cells[0].Value + 
                                                   " " + GridPurchase.Rows[i].Cells[1].Value + " " + GridPurchase.Rows[i].Cells[2].Value + " " + GridPurchase.Rows[i].Cells[3].Value + 
                                                   " " + txtAmount.Text + " " + txtDiscount.Text + " " + txtTaxable.Text + " " + txtTax.Text + " " + txtGrand.Text + ".");
-                                                  
+                 */                               
 
                 String billdate = purDate.Text;
                 string suppName = txtSuppName.Text;
@@ -53,29 +53,34 @@ namespace InventorySolutions
                 String grandTotal = txtGrand.Text;
 
                 String particulars = GridPurchase.Rows[i].Cells[0].Value.ToString();
-                String unit = GridPurchase.Rows[i].Cells[0].Value.ToString();
-                String qty = GridPurchase.Rows[i].Cells[0].Value.ToString();
-                String rate = GridPurchase.Rows[i].Cells[0].Value.ToString();
-                String amount = GridPurchase.Rows[i].Cells[0].Value.ToString();
+                String unit = GridPurchase.Rows[i].Cells[1].Value.ToString();
+                String qty = GridPurchase.Rows[i].Cells[2].Value.ToString();
+                String rate = GridPurchase.Rows[i].Cells[3].Value.ToString();
+                String amount = GridPurchase.Rows[i].Cells[4].Value.ToString();
                 if (String.IsNullOrEmpty(billdate) || String.IsNullOrEmpty(suppName) || String.IsNullOrEmpty(add) || String.IsNullOrEmpty(totalAmount)
-                || String.IsNullOrEmpty(tax) || String.IsNullOrEmpty(grandTotal)
+                || String.IsNullOrEmpty(tax) || String.IsNullOrEmpty(grandTotal))
                 {
                     MessageBox.Show("All the fields should be filled", "Message", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
                 else
                 {
-                    string purInsert = "insert into Products(Date,Supplier_Name,Address,Particulars,Unit,Quantity,Rate,Amount,Total_Amount,Discount(%),Taxable_Amount,Tax(%),Grand_Total)" +
-                                        "values('" + prdCode + "','" + prdName + "','" + prdGrp + "','" + qty + "','" + unit + "','" + purPrice + "','" + salePrice + "');";
-
+                    string purInsert = "insert into Purchase(Bill_Date,Supplier_Name,Address,Particulars,Unit,Quantity,Rate,Amount,Total_Amount,Discount_Percentage,Taxable_Amount,Tax_Percentage,Grand_Total)" +
+                                        "values('" + billdate + "','" + suppName + "','" + add + "','" + particulars + "','" + unit + "','" + qty +
+                                        "','" + rate + "','" + amount + "','" + totalAmount + "','" + discount + "','" + taxable + "','" + tax + "','" + grandTotal +"');";
+                   // MessageBox.Show("Your values are " + purInsert);
+                    
                     db.DBConnect = db.DBConnection();
-                    MySqlCommand myProduct = new MySqlCommand(prdInsert, db.DBConnect);
+                    MySqlCommand myProduct = new MySqlCommand(purInsert, db.DBConnect);
                     try
                     {
                         //MySqlDataReader inscmd = cmd.ExecuteReader();
                         int num = myProduct.ExecuteNonQuery();
                         if (num > 0)
                         {
-                            MessageBox.Show("Product has been inserted.");
+                            MessageBox.Show("Bill has been prepared.");
+                            this.Close();
+                            ProductPurchase pb = new ProductPurchase();
+                            pb.Show();
                         }
                         else
                         {
@@ -87,7 +92,7 @@ namespace InventorySolutions
                         MessageBox.Show(er.Message, "An error has occured: ");
                     }
                 }
-                */
+                
             }
         }
 
@@ -95,7 +100,7 @@ namespace InventorySolutions
         {
             txtAmount.Text = (from DataGridViewRow row in GridPurchase.Rows
                               where row.Cells[3].FormattedValue.ToString() != string.Empty
-                              select Convert.ToInt32(row.Cells[3].FormattedValue)).Sum().ToString();
+                              select Convert.ToInt32(row.Cells[4].FormattedValue)).Sum().ToString();
         }
 
         private void txtTaxable_MouseClick(object sender, MouseEventArgs e)
@@ -110,8 +115,8 @@ namespace InventorySolutions
         private void txtGrand_MouseClick(object sender, MouseEventArgs e)
         {
             double tax = Convert.ToDouble(txtTax.Text);
-            double amt = Convert.ToDouble(txtTaxable.Text);
-            double grandTotal = (tax + amt);
+            double tamt = Convert.ToDouble(txtTaxable.Text);
+            double grandTotal = tamt + ((tamt+tax)/100);
 
             txtGrand.Text = grandTotal.ToString();
         }

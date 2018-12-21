@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.proDate = new System.Windows.Forms.DateTimePicker();
             this.txtSupplierName = new System.Windows.Forms.TextBox();
             this.txtSuppAdd = new System.Windows.Forms.TextBox();
             this.txtproBillNo = new System.Windows.Forms.TextBox();
@@ -38,6 +37,11 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.addPurchaseGrid = new System.Windows.Forms.DataGridView();
+            this.Particulars = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -48,23 +52,11 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
-            this.Particulars = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtUnit = new System.Windows.Forms.TextBox();
             this.lblUnit = new System.Windows.Forms.Label();
+            this.proDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.addPurchaseGrid)).BeginInit();
             this.SuspendLayout();
-            // 
-            // proDate
-            // 
-            this.proDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.proDate.Location = new System.Drawing.Point(359, 9);
-            this.proDate.Name = "proDate";
-            this.proDate.Size = new System.Drawing.Size(84, 20);
-            this.proDate.TabIndex = 1;
             // 
             // txtSupplierName
             // 
@@ -87,6 +79,7 @@
             // 
             this.txtproBillNo.Location = new System.Drawing.Point(59, 9);
             this.txtproBillNo.Name = "txtproBillNo";
+            this.txtproBillNo.ReadOnly = true;
             this.txtproBillNo.Size = new System.Drawing.Size(134, 20);
             this.txtproBillNo.TabIndex = 0;
             this.txtproBillNo.Text = " ";
@@ -153,6 +146,37 @@
             this.addPurchaseGrid.ReadOnly = true;
             this.addPurchaseGrid.Size = new System.Drawing.Size(660, 220);
             this.addPurchaseGrid.TabIndex = 90;
+            // 
+            // Particulars
+            // 
+            this.Particulars.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Particulars.HeaderText = "Particulars";
+            this.Particulars.Name = "Particulars";
+            this.Particulars.ReadOnly = true;
+            // 
+            // Unit
+            // 
+            this.Unit.HeaderText = "Unit";
+            this.Unit.Name = "Unit";
+            this.Unit.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Qty";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Rate
+            // 
+            this.Rate.HeaderText = "Rate";
+            this.Rate.Name = "Rate";
+            this.Rate.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
             // 
             // btnCancel
             // 
@@ -241,37 +265,6 @@
             this.lblProductName.TabIndex = 80;
             this.lblProductName.Text = "Product Name";
             // 
-            // Particulars
-            // 
-            this.Particulars.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Particulars.HeaderText = "Particulars";
-            this.Particulars.Name = "Particulars";
-            this.Particulars.ReadOnly = true;
-            // 
-            // Unit
-            // 
-            this.Unit.HeaderText = "Unit";
-            this.Unit.Name = "Unit";
-            this.Unit.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Qty";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Rate
-            // 
-            this.Rate.HeaderText = "Rate";
-            this.Rate.Name = "Rate";
-            this.Rate.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            // 
             // txtUnit
             // 
             this.txtUnit.Location = new System.Drawing.Point(93, 219);
@@ -288,14 +281,23 @@
             this.lblUnit.TabIndex = 97;
             this.lblUnit.Text = "Unit";
             // 
+            // proDate
+            // 
+            this.proDate.CustomFormat = "yyyy-MM-dd";
+            this.proDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.proDate.Location = new System.Drawing.Point(359, 6);
+            this.proDate.Name = "proDate";
+            this.proDate.Size = new System.Drawing.Size(84, 20);
+            this.proDate.TabIndex = 98;
+            // 
             // ProductPurchase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 297);
+            this.Controls.Add(this.proDate);
             this.Controls.Add(this.txtUnit);
             this.Controls.Add(this.lblUnit);
-            this.Controls.Add(this.proDate);
             this.Controls.Add(this.txtSupplierName);
             this.Controls.Add(this.txtSuppAdd);
             this.Controls.Add(this.txtproBillNo);
@@ -317,6 +319,7 @@
             this.Controls.Add(this.lblProductName);
             this.Name = "ProductPurchase";
             this.Text = "ProductPurchase";
+            this.Load += new System.EventHandler(this.ProductPurchase_Load);
             ((System.ComponentModel.ISupportInitialize)(this.addPurchaseGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -324,8 +327,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker proDate;
         private System.Windows.Forms.TextBox txtSupplierName;
         private System.Windows.Forms.TextBox txtSuppAdd;
         private System.Windows.Forms.TextBox txtproBillNo;
@@ -352,5 +353,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.TextBox txtUnit;
         private System.Windows.Forms.Label lblUnit;
+        public System.Windows.Forms.DateTimePicker proDate;
     }
 }

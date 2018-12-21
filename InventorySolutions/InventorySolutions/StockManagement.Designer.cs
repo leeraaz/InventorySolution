@@ -45,8 +45,6 @@
             this.lblUnit = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.cmbUnit = new System.Windows.Forms.ComboBox();
-            this.lblSize = new System.Windows.Forms.Label();
-            this.cmbSize = new System.Windows.Forms.ComboBox();
             this.stockGrid = new System.Windows.Forms.DataGridView();
             this.cmbGroups = new System.Windows.Forms.ComboBox();
             this.btnOk = new System.Windows.Forms.Button();
@@ -140,7 +138,7 @@
             this.txtSalePri.Location = new System.Drawing.Point(407, 154);
             this.txtSalePri.Name = "txtSalePri";
             this.txtSalePri.Size = new System.Drawing.Size(143, 20);
-            this.txtSalePri.TabIndex = 61;
+            this.txtSalePri.TabIndex = 6;
             // 
             // txtQty
             // 
@@ -148,7 +146,7 @@
             this.txtQty.Location = new System.Drawing.Point(106, 128);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(163, 20);
-            this.txtQty.TabIndex = 60;
+            this.txtQty.TabIndex = 3;
             // 
             // txtPurPri
             // 
@@ -156,7 +154,7 @@
             this.txtPurPri.Location = new System.Drawing.Point(106, 154);
             this.txtPurPri.Name = "txtPurPri";
             this.txtPurPri.Size = new System.Drawing.Size(100, 20);
-            this.txtPurPri.TabIndex = 59;
+            this.txtPurPri.TabIndex = 4;
             // 
             // txtProductName
             // 
@@ -164,15 +162,16 @@
             this.txtProductName.Location = new System.Drawing.Point(106, 74);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(444, 20);
-            this.txtProductName.TabIndex = 57;
+            this.txtProductName.TabIndex = 1;
             // 
             // txtProductCode
             // 
             this.txtProductCode.Enabled = false;
             this.txtProductCode.Location = new System.Drawing.Point(106, 48);
             this.txtProductCode.Name = "txtProductCode";
+            this.txtProductCode.ReadOnly = true;
             this.txtProductCode.Size = new System.Drawing.Size(149, 20);
-            this.txtProductCode.TabIndex = 56;
+            this.txtProductCode.TabIndex = 0;
             // 
             // lblSale
             // 
@@ -199,7 +198,7 @@
             this.btnClose.Location = new System.Drawing.Point(475, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 72;
+            this.btnClose.TabIndex = 9;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnCancel_Click);
@@ -217,35 +216,8 @@
             this.cmbUnit.Location = new System.Drawing.Point(368, 128);
             this.cmbUnit.Name = "cmbUnit";
             this.cmbUnit.Size = new System.Drawing.Size(182, 21);
-            this.cmbUnit.TabIndex = 73;
+            this.cmbUnit.TabIndex = 5;
             this.cmbUnit.UseWaitCursor = true;
-            // 
-            // lblSize
-            // 
-            this.lblSize.AutoSize = true;
-            this.lblSize.Enabled = false;
-            this.lblSize.Location = new System.Drawing.Point(333, 105);
-            this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(27, 13);
-            this.lblSize.TabIndex = 74;
-            this.lblSize.Text = "Size";
-            // 
-            // cmbSize
-            // 
-            this.cmbSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSize.Enabled = false;
-            this.cmbSize.FormattingEnabled = true;
-            this.cmbSize.Items.AddRange(new object[] {
-            "1/2\"",
-            "3/4\"",
-            "1\"",
-            "1-1/4\"",
-            "1-1/2\"",
-            "2\""});
-            this.cmbSize.Location = new System.Drawing.Point(368, 102);
-            this.cmbSize.Name = "cmbSize";
-            this.cmbSize.Size = new System.Drawing.Size(182, 21);
-            this.cmbSize.TabIndex = 75;
             // 
             // stockGrid
             // 
@@ -269,7 +241,7 @@
             this.cmbGroups.Location = new System.Drawing.Point(106, 100);
             this.cmbGroups.Name = "cmbGroups";
             this.cmbGroups.Size = new System.Drawing.Size(221, 21);
-            this.cmbGroups.TabIndex = 77;
+            this.cmbGroups.TabIndex = 2;
             // 
             // btnOk
             // 
@@ -277,7 +249,7 @@
             this.btnOk.Location = new System.Drawing.Point(160, 183);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 78;
+            this.btnOk.TabIndex = 7;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -288,7 +260,7 @@
             this.btnManageCancel.Location = new System.Drawing.Point(241, 183);
             this.btnManageCancel.Name = "btnManageCancel";
             this.btnManageCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnManageCancel.TabIndex = 79;
+            this.btnManageCancel.TabIndex = 8;
             this.btnManageCancel.Text = "Cancel";
             this.btnManageCancel.UseVisualStyleBackColor = true;
             this.btnManageCancel.Click += new System.EventHandler(this.btnManageCancel_Click);
@@ -302,8 +274,6 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.cmbGroups);
             this.Controls.Add(this.stockGrid);
-            this.Controls.Add(this.cmbSize);
-            this.Controls.Add(this.lblSize);
             this.Controls.Add(this.cmbUnit);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDele);
@@ -349,8 +319,6 @@
         private System.Windows.Forms.Label lblUnit;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ComboBox cmbUnit;
-        private System.Windows.Forms.Label lblSize;
-        private System.Windows.Forms.ComboBox cmbSize;
         private System.Windows.Forms.DataGridView stockGrid;
         private System.Windows.Forms.ComboBox cmbGroups;
         private System.Windows.Forms.Button btnOk;

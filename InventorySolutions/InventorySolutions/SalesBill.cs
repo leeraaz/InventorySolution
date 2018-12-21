@@ -69,7 +69,7 @@ namespace InventorySolutions
         {
             txtAmount.Text = (from DataGridViewRow row in GridSales.Rows
                                 where row.Cells[3].FormattedValue.ToString() != string.Empty
-                                select Convert.ToInt32(row.Cells[3].FormattedValue)).Sum().ToString();
+                                select Convert.ToInt32(row.Cells[4].FormattedValue)).Sum().ToString();
         }
 
         private void txtTaxable_MouseClick(object sender, MouseEventArgs e)
@@ -88,6 +88,72 @@ namespace InventorySolutions
             double grandTotal = (tax + amt);
 
             txtGrand.Text = grandTotal.ToString();
+        }
+
+        private void btnSalesOk_Click(object sender, EventArgs e)
+        {
+
+            db.DBConnect = db.DBConnection();
+
+
+            for (int i = 0; i < GridSales.Rows.Count - 1; i++)
+            {
+                /*
+                MessageBox.Show("Your value are " + txtSaleBillno.Text+" " + saleDate.Text + " " + txtSaleName.Text + " " +txtSaleAdd.Text + 
+                                                  " "+ GridSales.Rows[i].Cells[0].Value + 
+                                                  " " + GridSales.Rows[i].Cells[1].Value + " " + GridSales.Rows[i].Cells[2].Value + " " + GridSales.Rows[i].Cells[3].Value + " " +GridSales.Rows[i].Cells[4].Value +
+                                                  " " + txtAmount.Text + " " + txtDiscount.Text + " " + txtTaxable.Text + " " + txtTax.Text + " " + txtGrand.Text + ".");
+                */ 
+                String billdate = saleDate.Text;
+                String cusName = txtSaleName.Text;
+                String add = txtSaleAdd.Text;
+                String totalAmount = txtAmount.Text;
+                String discount = txtDiscount.Text;
+                String taxable = txtTaxable.Text;
+                String tax = txtTax.Text;
+                String grandTotal = txtGrand.Text;
+
+                String particulars = GridSales.Rows[i].Cells[0].Value.ToString();
+                String unit = GridSales.Rows[i].Cells[1].Value.ToString();
+                String qty = GridSales.Rows[i].Cells[2].Value.ToString();
+                String rate = GridSales.Rows[i].Cells[3].Value.ToString();
+                String amount = GridSales.Rows[i].Cells[4].Value.ToString();
+                if (String.IsNullOrEmpty(billdate) || String.IsNullOrEmpty(cusName) || String.IsNullOrEmpty(add) || String.IsNullOrEmpty(totalAmount)
+                || String.IsNullOrEmpty(tax) || String.IsNullOrEmpty(grandTotal))
+                {
+                    MessageBox.Show("All the fields should be filled", "Message", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                else
+                {
+                    string saleInsert = "insert into sales(Bill_Date,Customer_Name,Address,Particulars,Unit,Quantity,Rate,Amount,Total_Amount,Discount_Percentage,Taxable_Amount,Tax_Percentage,Grand_Total)" +
+                                        "values('" + billdate + "','" + cusName + "','" + add + "','" + particulars + "','" + unit + "','" + qty +
+                                        "','" + rate + "','" + amount + "','" + totalAmount + "','" + discount + "','" + taxable + "','" + tax + "','" + grandTotal + "');";
+                    // MessageBox.Show("Your values are " + purInsert);
+
+                    db.DBConnect = db.DBConnection();
+                    MySqlCommand myProduct = new MySqlCommand(saleInsert, db.DBConnect);
+                    try
+                    {
+                        //MySqlDataReader inscmd = cmd.ExecuteReader();
+                        int num = myProduct.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Bill has been prepared.");
+                            this.Close();
+                            ProductPurchase pb = new ProductPurchase();
+                            pb.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data not inserted.");
+                        }
+                    }
+                    catch (MySqlException er)
+                    {
+                        MessageBox.Show(er.Message, "An error has occured: ");
+                    }
+                }
+            }
         }
     }
 }

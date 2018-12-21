@@ -39,6 +39,11 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.addSalesGrid = new System.Windows.Forms.DataGridView();
+            this.Particulars = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLoad = new System.Windows.Forms.Button();
             this.proDate = new System.Windows.Forms.DateTimePicker();
             this.proCusName = new System.Windows.Forms.TextBox();
@@ -48,10 +53,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblBillNo = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.Particulars = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtUnit = new System.Windows.Forms.TextBox();
+            this.lblUnit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.addSalesGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,75 +129,115 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(5, 236);
+            this.btnAdd.Location = new System.Drawing.Point(12, 259);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(111, 236);
+            this.btnCancel.Location = new System.Drawing.Point(118, 259);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // addSalesGrid
             // 
+            this.addSalesGrid.AllowUserToAddRows = false;
+            this.addSalesGrid.AllowUserToDeleteRows = false;
             this.addSalesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.addSalesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Particulars,
+            this.Unit,
             this.Quantity,
             this.Rate,
             this.Amount});
             this.addSalesGrid.Location = new System.Drawing.Point(200, 73);
             this.addSalesGrid.Name = "addSalesGrid";
-            this.addSalesGrid.Size = new System.Drawing.Size(456, 220);
+            this.addSalesGrid.ReadOnly = true;
+            this.addSalesGrid.Size = new System.Drawing.Size(548, 220);
             this.addSalesGrid.TabIndex = 70;
+            // 
+            // Particulars
+            // 
+            this.Particulars.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Particulars.HeaderText = "Particulars";
+            this.Particulars.Name = "Particulars";
+            this.Particulars.ReadOnly = true;
+            // 
+            // Unit
+            // 
+            this.Unit.HeaderText = "Unit";
+            this.Unit.Name = "Unit";
+            this.Unit.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Qty";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Rate
+            // 
+            this.Rate.HeaderText = "Rate";
+            this.Rate.Name = "Rate";
+            this.Rate.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(545, 13);
+            this.btnLoad.Location = new System.Drawing.Point(673, 7);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
-            this.btnLoad.TabIndex = 71;
+            this.btnLoad.TabIndex = 11;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // proDate
             // 
+            this.proDate.CustomFormat = "yyyy-MM-dd";
             this.proDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.proDate.Location = new System.Drawing.Point(360, 12);
             this.proDate.Name = "proDate";
             this.proDate.Size = new System.Drawing.Size(84, 20);
-            this.proDate.TabIndex = 79;
+            this.proDate.TabIndex = 1;
             // 
             // proCusName
             // 
+            this.proCusName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.proCusName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.proCusName.Location = new System.Drawing.Point(96, 45);
             this.proCusName.Name = "proCusName";
-            this.proCusName.Size = new System.Drawing.Size(207, 20);
-            this.proCusName.TabIndex = 78;
+            this.proCusName.Size = new System.Drawing.Size(367, 20);
+            this.proCusName.TabIndex = 2;
             // 
             // proCusAdd
             // 
-            this.proCusAdd.Location = new System.Drawing.Point(360, 45);
+            this.proCusAdd.Location = new System.Drawing.Point(520, 45);
             this.proCusAdd.Name = "proCusAdd";
-            this.proCusAdd.Size = new System.Drawing.Size(164, 20);
-            this.proCusAdd.TabIndex = 77;
+            this.proCusAdd.Size = new System.Drawing.Size(228, 20);
+            this.proCusAdd.TabIndex = 3;
+            this.proCusAdd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.proCusAdd_MouseClick);
             // 
             // proBillNo
             // 
             this.proBillNo.Location = new System.Drawing.Point(60, 12);
             this.proBillNo.Name = "proBillNo";
+            this.proBillNo.ReadOnly = true;
             this.proBillNo.Size = new System.Drawing.Size(134, 20);
-            this.proBillNo.TabIndex = 76;
+            this.proBillNo.TabIndex = 0;
             // 
             // label3
             // 
@@ -208,7 +251,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(309, 48);
+            this.label2.Location = new System.Drawing.Point(469, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 74;
@@ -232,36 +275,29 @@
             this.lblDate.TabIndex = 73;
             this.lblDate.Text = "Date";
             // 
-            // Particulars
+            // txtUnit
             // 
-            this.Particulars.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Particulars.HeaderText = "Particulars";
-            this.Particulars.Name = "Particulars";
-            this.Particulars.ReadOnly = true;
+            this.txtUnit.Location = new System.Drawing.Point(94, 222);
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.Size = new System.Drawing.Size(100, 20);
+            this.txtUnit.TabIndex = 8;
             // 
-            // Quantity
+            // lblUnit
             // 
-            this.Quantity.HeaderText = "Qty";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // Rate
-            // 
-            this.Rate.HeaderText = "Rate";
-            this.Rate.Name = "Rate";
-            this.Rate.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
+            this.lblUnit.AutoSize = true;
+            this.lblUnit.Location = new System.Drawing.Point(13, 225);
+            this.lblUnit.Name = "lblUnit";
+            this.lblUnit.Size = new System.Drawing.Size(26, 13);
+            this.lblUnit.TabIndex = 80;
+            this.lblUnit.Text = "Unit";
             // 
             // ProductSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 311);
+            this.ClientSize = new System.Drawing.Size(755, 311);
+            this.Controls.Add(this.txtUnit);
+            this.Controls.Add(this.lblUnit);
             this.Controls.Add(this.proDate);
             this.Controls.Add(this.proCusName);
             this.Controls.Add(this.proCusAdd);
@@ -312,7 +348,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblBillNo;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.TextBox txtUnit;
+        private System.Windows.Forms.Label lblUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Particulars;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;

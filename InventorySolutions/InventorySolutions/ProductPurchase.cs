@@ -111,7 +111,7 @@ namespace InventorySolutions
                     string sname = myReader.GetString("Product_Name");
                     if (sname == txtProductName.Text)
                     {
-                        txtRate.Text = myReader.GetInt32("Sales_Price").ToString();
+                        txtRate.Text = myReader.GetInt32("Purchase_Price").ToString();
                         txtUnit.Text = myReader.GetString("Unit");
                         int rate = Convert.ToInt32(txtRate.Text);
                         int qtt = Convert.ToInt32(txtQty.Text);
@@ -198,6 +198,11 @@ namespace InventorySolutions
             {
                 MessageBox.Show(ex.Message, "Error Occured");
             }
+        }
+
+        private void ProductPurchase_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
